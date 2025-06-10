@@ -3,9 +3,11 @@ import './birthday.css'
 import PageTransition from "../components/PageTransition";
 import { birthday } from '../assets/assets'
 import { CartContext } from '../context/CartContext'
+import { useNavigate } from 'react-router-dom';
 
 const Birthday = () => {
     const { addToCart } = useContext(CartContext);
+    const navigate=useNavigate();
   return (
     <PageTransition>
     <div className='birthday-page'>

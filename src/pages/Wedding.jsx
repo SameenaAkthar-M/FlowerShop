@@ -3,9 +3,11 @@ import { weddingCollection } from '../assets/assets.js'
 import './wedding.css'
 import { CartContext } from '../context/CartContext';
 import PageTransition from "../components/PageTransition";
+import { useNavigate } from 'react-router-dom';
 
 const Wedding = () => {
   const { addToCart } = useContext(CartContext);
+  const navigate=useNavigate();
   return (
     <PageTransition>
     <div className='wedding-page'>

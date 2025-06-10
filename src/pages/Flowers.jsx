@@ -3,11 +3,13 @@ import {flowersCollection} from '../assets/assets.js'
 import PageTransition from "../components/PageTransition";
 import './flowers.css'
 import { CartContext } from '../context/CartContext'
+import { useNavigate } from 'react-router-dom';
 
 const Flowers = () => {
   const [visibleItems,setVisibleItems]=useState(12);
   const increment=12;
   const { addToCart } = useContext(CartContext);
+  const navigate=useNavigate();
 
   return (
     <PageTransition>
