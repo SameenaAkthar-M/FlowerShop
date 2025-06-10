@@ -55,3 +55,42 @@
 .buy-butn{
   margin-left: 15px;
 }
+
+.icon-del {
+  color: #dc2626; /* default color (red-600) */
+  transition: color 0.3s ease;
+}
+
+.icon-del:hover {
+  color: #b91c1c; /* darker red on hover (red-700) */
+  cursor: pointer;
+}
+
+.qty-control {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 36px;
+}
+
+.qty-btn {
+  background-color:  #c0747a;; /* light gray */
+  border: none;
+  padding: 0 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  height: 100%;
+}
+
+.qty-btn:hover {
+  background-color:  #975c61;; /* slightly darker gray */
+}
+
+.qty-display {
+  width: 30px;
+  text-align: center;
+  font-size: 16px;
+}
