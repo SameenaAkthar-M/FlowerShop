@@ -1,27 +1,159 @@
-.weddingSale{
+.weddingSale {
   width: 100%;
-  background-color:  #3D4B3D;
+  background-color: #3D4B3D;
   padding: 20px;
   padding-bottom: 50px;
   box-shadow: 0px -3px 8px rgba(0, 0, 0, 0.2);
 }
 
-.headings{
+.headings {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: row;
 }
 
-.card{
+.headings h2 {
+  font-size: 1.8rem;
+}
+
+.headings a {
+  color: burlywood;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Card Styles */
+.card {
   padding: 20px;
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   transition: all 0.3s ease;
   border-radius: 10px;
+  text-align: center;
+  color: white;
 }
 
-.card-image{
+.card-image {
   width: 100%;
-  border-radius: 10px;
+  height: 180px;
   object-fit: cover;
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.card p {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.butns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+  align-items: center;
+}
+
+.b1 {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px 20px;
+  background-color: #c0747a;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.b1:hover {
+  background-color: #ad6b71;
+}
+
+
+/* Navigation Arrows */
+.swiper-button-prev,
+.swiper-button-next {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 16px;
+  color: black;
+}
+
+/* 📱 Responsive Styles */
+@media (max-width: 768px) {
+  .headings {
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .headings h2 {
+    font-size: 1.5rem;
+  }
+
+  .headings a {
+    font-size: 0.9rem;
+  }
+
+  .card-image {
+    height: 180px;
+  }
+
+  .butns {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .b1 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .headings h2 {
+    font-size: 1.3rem;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .card-image {
+    height: 160px;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  .b1 {
+    width: 100%;
+    font-size: 13px;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
 }

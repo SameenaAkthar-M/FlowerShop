@@ -112,3 +112,35 @@
     border-radius: 20px;
   }
 }
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    padding: 20px;
+    top: 45%;
+  }
+
+  .content .main-content {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .content img {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .content h1 {
+    font-size: 28px;
+    padding: 10px;
+  }
+
+  .butn .butnele {
+    margin-top: 30px;
+    padding: 15px 25px;
+    font-size: 16px;
+  }
+}

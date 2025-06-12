@@ -16,14 +16,30 @@ const Explore = () => {
     <div className='explore' id='explore-section'>
       <h2>Top Seller</h2>
       <Swiper
-        modules={[Navigation, Autoplay]}
-        spaceBetween={20}
-        slidesPerView={4}
-        navigation
-        pagination={{ clickable: true }}
-        autoplay={{ delay: 9000, disableOnInteraction: true }}
-        loop={true}
-      >
+  modules={[Navigation, Autoplay]}
+  spaceBetween={20}
+  navigation
+  autoplay={{ delay: 9000, disableOnInteraction: true }}
+  loop={true}
+  breakpoints={{
+    0: {
+      slidesPerView: 1,
+    },
+    480: {
+      slidesPerView: 1.2,
+    },
+    640: {
+      slidesPerView: 2,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    1024: {
+      slidesPerView: 4,
+    },
+  }}
+>
+
         {topseller.map((item) => (
           <SwiperSlide key={item.id} className="card">
             <img src={item.image} alt={item.name} className="card-image"/>

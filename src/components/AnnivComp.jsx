@@ -19,15 +19,34 @@ const AnnivComp = () => {
           navigate('/anniversary')
         }}>View more</a>
         </div>
-        <Swiper modules={[Navigation,Autoplay]}
-        spaceBetween={20}
-        slidesPerView={4}
-        navigation
-        pagination={{clickable:true}}
-        autoplay={{delay:3000,
-          disableOnInteraction:false
-        }}
-        loop={true}>
+        <Swiper
+  modules={[Navigation, Autoplay]}
+  spaceBetween={20}
+  navigation
+  autoplay={{
+    delay: 5000,
+    disableOnInteraction: false,
+  }}
+  loop={true}
+  breakpoints={{
+    0: {
+      slidesPerView: 1,
+    },
+    480: {
+      slidesPerView: 1.2,
+    },
+    640: {
+      slidesPerView: 2,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    1024: {
+      slidesPerView: 4,
+    },
+  }}
+>
+
           {annivSell.map((item) => (
             <SwiperSlide key={item.id} className="card">
               <img src={item.image} alt={item.name} className="card-image"/>
