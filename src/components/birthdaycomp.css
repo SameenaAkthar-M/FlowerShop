@@ -31,9 +31,12 @@
   backdrop-filter: blur(20px);
   transition: all 0.3s ease;
   border-radius: 10px;
-  cursor: pointer;
   text-align: center;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
 }
 
 .card-image {
@@ -80,7 +83,6 @@ p {
   background-color: #ad6b71;
 }
 
-/* Swiper arrows */
 .swiper-button-prev,
 .swiper-button-next {
   background: rgba(255, 255, 255, 0.3);
@@ -100,7 +102,6 @@ p {
   color: black;
 }
 
-/* ✅ Responsive Styles */
 @media (max-width: 768px) {
   .headings {
     align-items: flex-start;

@@ -1,45 +1,60 @@
 .navbar {
   position: fixed;
   top: 0;
-  height: 80px;
   width: 100%;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  z-index: 100;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  color: white;
 }
 
-/* Hamburger left */
-.hamburger {
-  font-size: 24px;
-  cursor: pointer;
-  color: #000;
-  padding-right: 30px;
-  display: none;
-}
-
-/* Logo center */
-.logo {
-  flex: 1;
-  text-align: center;
+/* Left nav: Hamburger + Logo */
+.left-nav {
+  display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 10px;
 }
 
 .logo img {
   height: 40px;
 }
 
-/* Cart right */
+/* Hamburger */
+.hamburger {
+  font-size: 24px;
+  color: black;
+  cursor: pointer;
+  display: none;
+}
+
+/* Nav Links Center (desktop) */
+.links {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 15px;
+}
+
+.links a.active {
+  border-bottom: 2px solid #ce6b61;
+}
+
+/* Cart Right */
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 15px;
 }
 
 .icon {
@@ -50,6 +65,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .cart .circle {
@@ -67,47 +83,33 @@
   justify-content: center;
 }
 
-/* Mobile Menu */
-.links {
-  position: absolute;
-  top: 80px;
-  left: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(50px);
-  z-index: 100;
-  flex-direction: column;
-  align-items: center;
-  max-height: 0;
-  overflow: hidden;
-  color: white;
-  transition: max-height 0.3s ease;
-}
-
-.links a {
-  padding: 12px 0;
-  display: block;
-  width: 100%;
-  text-align: center;
-  font-size: 16px;
-  text-decoration: none;
-}
-
-.links a.active {
-  background-color: #4b4b4b;
-}
-
-.links.mobile-show {
-  max-height: 500px;
-}
-
-/* Responsive behavior */
+/* Mobile styles */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
   }
 
   .links {
-    display: flex;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .links.mobile-show {
+    max-height: 500px;
+  }
+
+  .links a {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
   }
 }

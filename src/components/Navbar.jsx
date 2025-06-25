@@ -39,44 +39,48 @@ const Navbar = () => {
 
   return (
     <nav ref={navRef} className="navbar">
-      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-        {menuOpen ? <FaTimes /> : <FaBars />}
-      </div>
+  {/* Left: Hamburger (mobile only) */}
+  <div className="left-nav">
+    <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+      {menuOpen ? <FaTimes /> : <FaBars />}
+    </div>
+    <div className="logo">
+      <img src={logo} alt="logo" />
+    </div>
+  </div>
 
-      <div className="logo">
-        <img src={logo} alt="logo" />
-      </div>
+  {/* Center: Nav Links */}
+  <div className={`links ${menuOpen ? "mobile-show" : ""}`}>
+    {["home", "birthday", "wedding", "anniversary", "flowers"].map((page) => (
+      <a
+        key={page}
+        href="#"
+        className={activeLink === page ? "active" : ""}
+        onClick={(e) => {
+          e.preventDefault();
+          handleNavClick(page);
+        }}
+      >
+        {page.charAt(0).toUpperCase() + page.slice(1)}
+      </a>
+    ))}
+  </div>
 
-      <div className="nav-right">
-        <div
-          className={`cart ${activeLink === "cart" ? "cart-active" : ""}`}
-          onClick={() => handleNavClick("cart")}
-        >
-          <FaCartShopping
-            className={`icon ${activeLink === "cart" ? "icon-active" : ""}`}
-          />
-          <div className="circle">{cart.length}</div>
-        </div>
-      </div>
+  {/* Right: Cart */}
+  <div className="nav-right">
+    <div
+      className={`cart ${activeLink === "cart" ? "cart-active" : ""}`}
+      onClick={() => handleNavClick("cart")}
+    >
+      <FaCartShopping
+        className={`icon ${activeLink === "cart" ? "icon-active" : ""}`}
+      />
+      <div className="circle">{cart.length}</div>
+    </div>
+  </div>
+</nav>
 
-      <div className={`links ${menuOpen ? "mobile-show" : "mobile-hide"}`}>
-        {["home", "birthday", "wedding", "anniversary", "flowers"].map(
-          (page) => (
-            <a
-              key={page}
-              href="#"
-              className={activeLink === page ? "active" : ""}
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick(page);
-              }}
-            >
-              {page.charAt(0).toUpperCase() + page.slice(1)}
-            </a>
-          )
-        )}
-      </div>
-    </nav>
+
   );
 };
 
